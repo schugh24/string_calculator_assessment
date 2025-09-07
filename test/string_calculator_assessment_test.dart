@@ -47,5 +47,9 @@ void main() {
     test('ignores numbers greater than 1000', () {
       expect(add('2,1001,6'), 8);
     });
+
+    test('supports single custom delimiter of any length with //[...]', () {
+      expect(add('//[***]\n1***2***3'), 6);
+    });
   });
 }
