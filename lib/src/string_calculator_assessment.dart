@@ -30,8 +30,19 @@ int add(String input) {
     final newlineIndex = input.indexOf('\n');
     final delimiterDefinition = input.substring(2, newlineIndex);
     numbersSection = input.substring(newlineIndex + 1);
-    delimiterList = [delimiterDefinition, '\n'];
+
+    if (delimiterDefinition.startsWith('[') && delimiterDefinition.endsWith(']')) {
+      final delims = <String>[];
+      final regex = RegExp(r'\[(.*?)\]');
+      for (final m in regex.allMatches(delimiterDefinition)) {
+        delims.add(m.group(1)!);
+      }
+      delimiterList = [...delims, '\n'];
+    } else {
+      delimiterList = [delimiterDefinition, '\n'];
+    }
   }
 
   return (numbersSection, delimiterList);
+
 }
