@@ -14,4 +14,8 @@ void main() {
       expect(add('1,2'), 3);
     });
   });
+
+  test('unknown amount of numbers comma separated -> sum all', () {
+      expect(add('1,2,3,4'), 10);
+    });
 }
