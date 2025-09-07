@@ -25,5 +25,23 @@ void main() {
     test('supports custom single delimiter via pattern //[delimiter]\n[numbers…]', () {
       expect(add('//;\n1;2'), 3);
     });
+
+    test('throws exception on single negative with its value', () {
+      expect(
+        () => add('-2'),
+        throwsA(predicate((e) =>
+            e is FormatException &&
+            e.message == 'negatives not allowed -2')),
+      );
+    });
+
+    test('throws exception on multiple negatives with all values comma separated', () {
+      expect(
+        () => add('2,-4,3,-5'),
+        throwsA(predicate((e) =>
+            e is FormatException &&
+            e.message == 'negatives not allowed -4,-5')),
+      );
+    });
   });
 }
