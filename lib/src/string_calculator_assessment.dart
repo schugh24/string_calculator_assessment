@@ -5,6 +5,7 @@ int add(String input) {
   if (!input.contains(',')) {
     return int.parse(input);
   }
-  final parts = input.split(',');
+  // split by comma or newline
+  final parts = input.split(RegExp('[,\n]')).where((s) => s.isNotEmpty);
   return parts.map(int.parse).fold(0, (a, b) => a + b);
 }
