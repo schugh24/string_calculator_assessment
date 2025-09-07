@@ -54,5 +54,9 @@ void main() {
     test('supports multiple single character custom delimiters', () {
       expect(add('//[*][%]\n1*2%3'), 6);
     });
+
+    test('supports multiple custom multi character delimiters', () {
+      expect(add('//[***][%%]\n1***2%%3'), 6);
+    });
   });
 }
