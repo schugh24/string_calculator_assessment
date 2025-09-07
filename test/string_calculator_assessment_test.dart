@@ -10,12 +10,16 @@ void main() {
     expect(add('1'), 1);
   });
 
- test('two numbers comma-separated -> sum', () {
+    test('two numbers comma-separated -> sum', () {
       expect(add('1,2'), 3);
     });
   });
 
-  test('unknown amount of numbers comma separated -> sum all', () {
+    test('unknown amount of numbers comma separated -> sum all', () {
       expect(add('1,2,3,4'), 10);
+    });
+
+    test('allows newline as delimiter with commas', () {
+      expect(add('1\n2,3'), 6);
     });
 }
