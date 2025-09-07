@@ -6,10 +6,5 @@ int add(String input) {
     return int.parse(input);
   }
   final parts = input.split(',');
-  if (parts.length == 2) {
-    return int.parse(parts[0]) + int.parse(parts[1]);
-  }
-
-  // more than 2 not handled yet; coming next step
-  return 0;
+  return parts.map(int.parse).fold(0, (a, b) => a + b);
 }
