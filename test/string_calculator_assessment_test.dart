@@ -43,5 +43,9 @@ void main() {
             e.message == 'negatives not allowed -4,-5')),
       );
     });
+
+    test('ignores numbers greater than 1000', () {
+      expect(add('2,1001,6'), 8);
+    });
   });
 }
