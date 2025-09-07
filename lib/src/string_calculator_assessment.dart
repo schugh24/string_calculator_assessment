@@ -14,8 +14,9 @@ int add(String input) {
   if (negatives.isNotEmpty) {
     throw FormatException('negatives not allowed ${negatives.join(',')}');
   }
-
-  return numberStrings.map(int.parse).fold(0, (a, b) => a + b);
+  // ignore numbers > 1000
+  final filteredValues = values.where((n) => n <= 1000);
+  return filteredValues.fold(0, (a, b) => a + b);
 }
 
 
