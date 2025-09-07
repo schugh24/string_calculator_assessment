@@ -9,5 +9,9 @@ void main() {
     test('single number', () {
     expect(add('1'), 1);
   });
+
+ test('two numbers comma-separated -> sum', () {
+      expect(add('1,2'), 3);
+    });
   });
 }
