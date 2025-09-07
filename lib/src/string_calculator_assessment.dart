@@ -5,5 +5,11 @@ int add(String input) {
   if (!input.contains(',')) {
     return int.parse(input);
   }
+  final parts = input.split(',');
+  if (parts.length == 2) {
+    return int.parse(parts[0]) + int.parse(parts[1]);
+  }
+
+  // more than 2 not handled yet; coming next step
   return 0;
 }
