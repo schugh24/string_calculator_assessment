@@ -21,5 +21,9 @@ void main() {
     test('allows newline as delimiter with commas', () {
       expect(add('1\n2,3'), 6);
     });
+
+    test('supports custom single delimiter via pattern //[delimiter]\n[numbers…]', () {
+      expect(add('//;\n1;2'), 3);
+    });
   });
 }
