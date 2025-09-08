@@ -11,29 +11,42 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# String Calculator Assessment (TDD Kata)
+
+A Dart implementation of the **String Calculator Kata**, developed using strict **Test-Driven Development (TDD)**.  
+This package is mainly for demonstration and learning purposes — showing how to evolve code using the Red → Green → Refactor cycle.
+
+---
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Returns `0` for an empty string
+- Handles one or more comma-separated numbers
+- Supports newline (`\n`) as an additional delimiter
+- Allows custom delimiters defined in the format `//[delimiter]\n[numbers...]`
+- Throws exception for negative numbers with all negatives listed  
+  (`FormatException: negatives not allowed <list>`)
+- Ignores numbers greater than 1000
+- Supports delimiters of any length (`//[***]\n1***2***3`)
+- Supports multiple delimiters, including multi-character (`//[*][%]\n1*2%3` and `//[***][%%]\n1***2%%3`)
+
+---
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Prerequisites
+- Dart SDK installed (>=3.0.0 <4.0.0)
 
-## Usage
+### Setup
+Clone the repo and install dependencies:
+```
+git clone https://github.com/<your-username>/string_calculator_assessment.git
+cd string_calculator_assessment
+dart pub get
+```
+To run the tests:
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```
+dart test -r expanded
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
