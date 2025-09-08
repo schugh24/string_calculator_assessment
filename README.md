@@ -14,7 +14,7 @@ and the Flutter guide for
 # String Calculator Assessment (TDD Kata)
 
 A Dart implementation of the **String Calculator Kata**, developed using strict **Test-Driven Development (TDD)**.  
-This package is mainly for demonstration and learning purposes — showing how to evolve code using the Red → Green → Refactor cycle.
+This package reflects my approach to software craftsmanship. It documents how a simple problem — the String Calculator — can be solved using disciplined TDD, with every commit capturing a micro-step in the Red → Green → Refactor cycle.
 
 ---
 
